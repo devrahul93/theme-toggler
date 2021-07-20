@@ -1,10 +1,17 @@
-import React, { Fragment } from 'react'
+import React, { useState } from 'react'
+import Header from './Components/Header'
+import Herosection from './Components/HeroSection'
+import ThemeContext from './Context/ThemeContext'
 
 const App = () => {
+  const themeHook = useState('light')
   return (
-    <>
-      <h1>Hello World</h1>
-    </>
+    <ThemeContext.Provider value={themeHook}>
+      <div>
+        <Header />
+        <Herosection />
+      </div>
+    </ThemeContext.Provider>
   )
 }
 
